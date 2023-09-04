@@ -5,8 +5,16 @@ void main() {
     home: NinjaCard(),
   ));
 }
-class NinjaCard extends StatelessWidget {
+class NinjaCard extends StatefulWidget {
   const NinjaCard({super.key});
+
+  @override
+  State<NinjaCard> createState() => _NinjaCardState();
+}
+
+class _NinjaCardState extends State<NinjaCard> {
+
+  int counter=0;
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +68,7 @@ class NinjaCard extends StatelessWidget {
             ),
             SizedBox(height: 10,),
             Text(
-              '10  ',
+              '$counter',
               style: TextStyle(
                 color: Colors.yellow[200],
                 fontSize: 28,
@@ -93,6 +101,13 @@ class NinjaCard extends StatelessWidget {
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(onPressed: (){
+        setState(() {
+          counter ++;
+        });
+      },
+        child: Icon(Icons.add),
+        backgroundColor: Colors.grey[800],),
     );
   }
 }
