@@ -25,7 +25,7 @@ class NinjaCard extends StatelessWidget {
           children: [
             Center(
               child: CircleAvatar(
-                backgroundImage: NetworkImage("https://unsplash.com/photos/Os6oT6rGg40", scale: 100),
+                backgroundImage: AssetImage("assets/hamid.jpg"),
                 radius: 60,
               ),
             ),
